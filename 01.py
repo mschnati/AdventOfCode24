@@ -1,6 +1,6 @@
 list_1 = []
 list_2 = []
-with open("input_01.txt") as file:
+with open("inputs/input_01.txt") as file:
     for line in file:
         if line.strip():
             num1, num2 = map(int, line.split())
