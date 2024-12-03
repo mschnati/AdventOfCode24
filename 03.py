@@ -65,16 +65,13 @@ def part_2(memory: str):
     result = 0
 
     while memory != "":
-        while (memory != ""):
-            pre_mul = memory.partition('mul(')[0]
-            dont = pre_mul.find('don\'t()') # dont in part before 'mul('
-            if dont == -1:
-                memory, add = eval_next_mult(memory)
-                result += add
-            else:
-                break
-
-        memory = memory.partition('do()')[-1]
+        pre_mul = memory.partition('mul(')[0]
+        dont = pre_mul.find('don\'t()') # dont in part before 'mul('
+        if dont == -1:
+            memory, add = eval_next_mult(memory)
+            result += add
+        else:
+            memory = memory.partition('do()')[-1] # skip to after next do()
 
     return result
 
