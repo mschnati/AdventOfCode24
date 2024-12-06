@@ -66,6 +66,7 @@ int find_xmas(char **data, int row_size, int col_size) {
 int find_x_mas(char **data, int row_size, int col_size) {
     int count = 0;
 
+    // only check for 'A' in the inner cells
     for (int row = 1; row < row_size - 1; row++) {
         for (int col = 1; col < col_size - 1; col++) {
             if (data[row][col] == 'A') {
