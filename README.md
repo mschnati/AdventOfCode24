@@ -11,3 +11,7 @@ Day 3: [Python](03.py)
 Day 4: [C](04.c)
 
 Day 5: [Python](05.py)
+
+Day 6: [Python](06.py)
+
+Day 7: [Python](07.py)
