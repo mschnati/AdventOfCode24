@@ -1,6 +1,6 @@
 i = "inputs/input_09.txt"
 t = "test.txt"
-with open(t) as file:
+with open(i) as file:
     disk_map = file.read().strip()
 
 def is_even(num):
@@ -108,6 +108,8 @@ def move_files_2(file_system, gaps):
         while file_system[i - size] == id_num:
             size += 1
         for j, gap in enumerate(gaps):
+            if gap[0] > i:
+                break
             if gap[1] >= size:
                 found = True
                 # save the id number that was switched
@@ -118,7 +120,6 @@ def move_files_2(file_system, gaps):
                 # remove gap if it's been filled
                 if gaps[j][1] == 0:
                     gaps.pop(j)
-                # print(gaps)
                 break
             
         # write '.' where the file was
@@ -127,10 +128,9 @@ def move_files_2(file_system, gaps):
                 file_system[i - k] = '.'
 
         i -= size
-        # print(file_system)
     return file_system
 
 converted = convert(disk_map)
 gaps = find_gaps(converted)
 part_2 = move_files_2(converted, gaps)
-print(checksum(part_2))
+print("Part 2: " + str(checksum(part_2)))
