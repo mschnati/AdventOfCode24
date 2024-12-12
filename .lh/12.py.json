@@ -1,0 +1,182 @@
+{
+    "sourceFile": "12.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 41,
+            "patches": [
+                {
+                    "date": 1734022639381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1734022644624,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,4 +2,9 @@\n t = \"test.txt\"\n \n grid = []\n \n+with open(i) as file:\n+    for i, line in enumerate(file):\n+        grid.append([])\n+        for j, char in enumerate(line.strip()):\n+            grid[i].append(char)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734022659870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,6 @@\n with open(i) as file:\n     for i, line in enumerate(file):\n         grid.append([])\n         for j, char in enumerate(line.strip()):\n-            grid[i].append(char)\n\\ No newline at end of file\n+            grid[i].append(char)\n+\n"
+                },
+                {
+                    "date": 1734022668882,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,4 +8,5 @@\n         grid.append([])\n         for j, char in enumerate(line.strip()):\n             grid[i].append(char)\n \n+print(grid[]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734022685891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-i = \"inputs/input_10.txt\"\n+i = \"inputs/input_12txt\"\n t = \"test.txt\"\n \n grid = []\n \n@@ -8,5 +8,5 @@\n         grid.append([])\n         for j, char in enumerate(line.strip()):\n             grid[i].append(char)\n \n-print(grid[]\n\\ No newline at end of file\n+print(grid[0][1])\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734022696372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-i = \"inputs/input_12txt\"\n+i = \"inputs/input_12.txt\"\n t = \"test.txt\"\n \n grid = []\n \n"
+                },
+                {
+                    "date": 1734022730380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+\n i = \"inputs/input_12.txt\"\n t = \"test.txt\"\n \n grid = []\n"
+                },
+                {
+                    "date": 1734022737136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-\n+from \n i = \"inputs/input_12.txt\"\n t = \"test.txt\"\n \n grid = []\n"
+                },
+                {
+                    "date": 1734022747165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n-from \n+from collections import defaultdict\n i = \"inputs/input_12.txt\"\n t = \"test.txt\"\n \n grid = []\n-\n+re\n with open(i) as file:\n     for i, line in enumerate(file):\n         grid.append([])\n         for j, char in enumerate(line.strip()):\n"
+                },
+                {
+                    "date": 1734022754132,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n i = \"inputs/input_12.txt\"\n t = \"test.txt\"\n \n grid = []\n-re\n+regions = defaultdict(list)\n with open(i) as file:\n     for i, line in enumerate(file):\n         grid.append([])\n         for j, char in enumerate(line.strip()):\n"
+                },
+                {
+                    "date": 1734022764302,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,6 @@\n     for i, line in enumerate(file):\n         grid.append([])\n         for j, char in enumerate(line.strip()):\n             grid[i].append(char)\n+            regions[char].append((i, j))\n \n\\ No newline at end of file\n-print(grid[0][1])\n"
+                },
+                {
+                    "date": 1734022883860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,4 +9,5 @@\n         grid.append([])\n         for j, char in enumerate(line.strip()):\n             grid[i].append(char)\n             regions[char].append((i, j))\n+\n"
+                },
+                {
+                    "date": 1734022891092,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,10 @@\n \n grid = []\n regions = defaultdict(list)\n with open(i) as file:\n-    for i, line in enumerate(file):\n+    for y, line in enumerate(file):\n         grid.append([])\n         for j, char in enumerate(line.strip()):\n-            grid[i].append(char)\n-            regions[char].append((i, j))\n+            grid[y].append(char)\n+            regions[char].append((y, j))\n \n"
+                },
+                {
+                    "date": 1734022897881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,8 @@\n regions = defaultdict(list)\n with open(i) as file:\n     for y, line in enumerate(file):\n         grid.append([])\n-        for j, char in enumerate(line.strip()):\n+        for x, char in enumerate(line.strip()):\n             grid[y].append(char)\n-            regions[char].append((y, j))\n+            regions[char].append((y, x))\n \n"
+                },
+                {
+                    "date": 1734022907536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,4 +10,5 @@\n         for x, char in enumerate(line.strip()):\n             grid[y].append(char)\n             regions[char].append((y, x))\n \n+print(grid)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734022942179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,12 +3,11 @@\n t = \"test.txt\"\n \n grid = []\n regions = defaultdict(list)\n-with open(i) as file:\n+with open(t) as file:\n     for y, line in enumerate(file):\n         grid.append([])\n         for x, char in enumerate(line.strip()):\n             grid[y].append(char)\n             regions[char].append((y, x))\n \n\\ No newline at end of file\n-print(grid)\n"
+                },
+                {
+                    "date": 1734022950173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,4 +9,6 @@\n         grid.append([])\n         for x, char in enumerate(line.strip()):\n             grid[y].append(char)\n             regions[char].append((y, x))\n+\n+print(regions\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734022956624,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,5 +10,5 @@\n         for x, char in enumerate(line.strip()):\n             grid[y].append(char)\n             regions[char].append((y, x))\n \n-print(regions\n\\ No newline at end of file\n+print(regions['R']\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734022962285,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,5 +10,5 @@\n         for x, char in enumerate(line.strip()):\n             grid[y].append(char)\n             regions[char].append((y, x))\n \n-print(regions['R']\n\\ No newline at end of file\n+print(regions['R'])\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734023015503,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,5 +10,6 @@\n         for x, char in enumerate(line.strip()):\n             grid[y].append(char)\n             regions[char].append((y, x))\n \n-print(regions['R'])\n\\ No newline at end of file\n+for region in regions:\n+    \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734023032244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,5 +11,5 @@\n             grid[y].append(char)\n             regions[char].append((y, x))\n \n for region in regions:\n-    \n\\ No newline at end of file\n+    for in\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734023047372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,5 +11,6 @@\n             grid[y].append(char)\n             regions[char].append((y, x))\n \n for region in regions:\n-    for in\n\\ No newline at end of file\n+    for index in region:\n+        print\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734023088022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,5 +12,5 @@\n             regions[char].append((y, x))\n \n for region in regions:\n     for index in region:\n-        print\n\\ No newline at end of file\n+        print(re\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734023096337,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,5 +12,5 @@\n             regions[char].append((y, x))\n \n for region in regions:\n     for index in region:\n-        print(re\n\\ No newline at end of file\n+        print(regions[index]:\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734023101667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,5 +12,5 @@\n             regions[char].append((y, x))\n \n for region in regions:\n     for index in region:\n-        print(regions[index]:\n\\ No newline at end of file\n+        print(region[index])\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734023127239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,9 @@\n         for x, char in enumerate(line.strip()):\n             grid[y].append(char)\n             regions[char].append((y, x))\n \n+\n+\n for region in regions:\n\\ No newline at end of file\n     for index in region:\n-        print(region[index])\n+        print(regions[index])\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734023136943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,10 @@\n             grid[y].append(char)\n             regions[char].append((y, x))\n \n \n+def in_bounds(y, x):\n+    return (0 <= y < len(grid)) and (0 <= x < len(grid[0]))\n \n for region in regions:\n     for index in region:\n         print(regions[index])\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734023167833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,11 +10,10 @@\n         for x, char in enumerate(line.strip()):\n             grid[y].append(char)\n             regions[char].append((y, x))\n \n-\n def in_bounds(y, x):\n     return (0 <= y < len(grid)) and (0 <= x < len(grid[0]))\n \n for region in regions:\n-    for index in region:\n+    for i in region:\n         print(regions[index])\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734023174069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,5 +15,5 @@\n     return (0 <= y < len(grid)) and (0 <= x < len(grid[0]))\n \n for region in regions:\n     for i in region:\n-        print(regions[index])\n\\ No newline at end of file\n+        index = regions[index])\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734023181727,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,5 +15,6 @@\n     return (0 <= y < len(grid)) and (0 <= x < len(grid[0]))\n \n for region in regions:\n     for i in region:\n-        index = regions[index])\n\\ No newline at end of file\n+        index = regions[i]\n+        \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734023198321,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,9 @@\n \n def in_bounds(y, x):\n     return (0 <= y < len(grid)) and (0 <= x < len(grid[0]))\n \n+\n+\n for region in regions:\n     for i in region:\n\\ No newline at end of file\n         index = regions[i]\n-        \n"
+                },
+                {
+                    "date": 1734023218271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,10 @@\n \n def in_bounds(y, x):\n     return (0 <= y < len(grid)) and (0 <= x < len(grid[0]))\n \n+dirs = [(0, -1), (1, 0), (0, 1), (-1, 0)]\n \n-\n+total = 0\n for region in regions:\n\\ No newline at end of file\n     for i in region:\n-        index = regions[i]\n+        index = regions[i]\n"
+                },
+                {
+                    "date": 1734023226782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,6 +17,7 @@\n dirs = [(0, -1), (1, 0), (0, 1), (-1, 0)]\n \n total = 0\n for region in regions:\n+    perimeter = 0\n     for i in region:\n\\ No newline at end of file\n-        index = regions[i]\n+        index = regions[i]\n"
+                },
+                {
+                    "date": 1734023233699,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,5 +19,6 @@\n total = 0\n for region in regions:\n     perimeter = 0\n     for i in region:\n-        index = regions[i]\n\\ No newline at end of file\n+        perimeter += 1\n+        index = regions[i]\n"
+                },
+                {
+                    "date": 1734023241844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,6 +19,6 @@\n total = 0\n for region in regions:\n     perimeter = 0\n     for i in region:\n-        perimeter += 1\n+        area += 1\n         index = regions[i]\n"
+                },
+                {
+                    "date": 1734023247651,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n dirs = [(0, -1), (1, 0), (0, 1), (-1, 0)]\n \n total = 0\n for region in regions:\n+    area = 0\n     perimeter = 0\n     for i in region:\n         area += 1\n         index = regions[i]\n"
+                },
+                {
+                    "date": 1734023277024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,4 +22,5 @@\n     perimeter = 0\n     for i in region:\n         area += 1\n         index = regions[i]\n+        \n"
+                },
+                {
+                    "date": 1734023288855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,5 +22,5 @@\n     perimeter = 0\n     for i in region:\n         area += 1\n         index = regions[i]\n-        \n+        for direction in dirs\n"
+                },
+                {
+                    "date": 1734023299713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,5 +22,6 @@\n     perimeter = 0\n     for i in region:\n         area += 1\n         index = regions[i]\n-        for direction in dirs\n+        for direction in dirs:\n+            if not in_bounds\n"
+                },
+                {
+                    "date": 1734023335440,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,5 +23,5 @@\n     for i in region:\n         area += 1\n         index = regions[i]\n         for direction in dirs:\n-            if not in_bounds\n+            if not in_bounds(index[0] + \n"
+                },
+                {
+                    "date": 1734023342241,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,5 +23,5 @@\n     for i in region:\n         area += 1\n         index = regions[i]\n         for direction in dirs:\n-            if not in_bounds(index[0] + direction[]\n+            if not in_bounds(index[0] + direction[0]\n"
+                },
+                {
+                    "date": 1734024254013,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n \n dirs = [(0, -1), (1, 0), (0, 1), (-1, 0)]\n \n total = 0\n-region\n+region = 0\n for line in grid:\n     for char in line:\n         \n"
+                }
+            ],
+            "date": 1734022639381,
+            "name": "Commit-0",
+            "content": "i = \"inputs/input_10.txt\"\nt = \"test.txt\"\n\ngrid = []\n\n"
+        }
+    ]
+}

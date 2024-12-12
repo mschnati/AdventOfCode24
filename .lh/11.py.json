@@ -1,0 +1,182 @@
+{
+    "sourceFile": "11.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 41,
+            "patches": [
+                {
+                    "date": 1734017094707,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1734017102779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +0,0 @@\n-7568 155731 0 972 1 6919238 80646 22\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734017159804,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,4 @@\n-\n+i = \"inputs/input_09.txt\"\n+t = \"test.txt\"\n+with open(i) as file:\n+    disk_map = file.read().strip()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734017182610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n-i = \"inputs/input_09.txt\"\n+i = \"inputs/input_11.txt\"\n t = \"test.txt\"\n with open(i) as file:\n\\ No newline at end of file\n-    disk_map = file.read().strip()\n+    inp = file.read().strip()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734017202722,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n i = \"inputs/input_11.txt\"\n t = \"test.txt\"\n with open(i) as file:\n-    inp = file.read().strip()\n\\ No newline at end of file\n+    inp = file.read().strip()\n+\n+def get_stones()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734017214491,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,9 @@\n t = \"test.txt\"\n with open(i) as file:\n     inp = file.read().strip()\n \n-def get_stones()\n\\ No newline at end of file\n+def get_stones():\n+    stones = defaultdict(int)\n+    for stone in inp.split(','):\n+        stones[stone] += 1\n+    return stones\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734017232464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,12 @@\n+\n+\n i = \"inputs/input_11.txt\"\n t = \"test.txt\"\n with open(i) as file:\n     inp = file.read().strip()\n \n def get_stones():\n     stones = defaultdict(int)\n-    for stone in inp.split(','):\n+    for stone in inp.split():\n         stones[stone] += 1\n     return stones\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734017240899,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n+from collections import defaultdict\n \n-\n i = \"inputs/input_11.txt\"\n t = \"test.txt\"\n with open(i) as file:\n     inp = file.read().strip()\n"
+                },
+                {
+                    "date": 1734017295273,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,5 +8,6 @@\n def get_stones():\n     stones = defaultdict(int)\n     for stone in inp.split():\n         stones[stone] += 1\n-    return stones\n\\ No newline at end of file\n+    return stones\n+\n"
+                },
+                {
+                    "date": 1734017305494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,4 +10,5 @@\n     for stone in inp.split():\n         stones[stone] += 1\n     return stones\n \n+def permutation\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734017313322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,4 @@\n     stones = defaultdict(int)\n     for stone in inp.split():\n         stones[stone] += 1\n     return stones\n-\n-def permutation\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734017318962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n with open(i) as file:\n     inp = file.read().strip()\n \n def get_stones():\n-    stones = defaultdict(int)\n     for stone in inp.split():\n         stones[stone] += 1\n     return stones\n+\n+def permutation\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734017325140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,10 @@\n t = \"test.txt\"\n with open(i) as file:\n     inp = file.read().strip()\n \n+stones = defaultdict(int)\n+\n def get_stones():\n     for stone in inp.split():\n         stones[stone] += 1\n     return stones\n"
+                },
+                {
+                    "date": 1734017334324,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,5 +11,5 @@\n     for stone in inp.split():\n         stones[stone] += 1\n     return stones\n \n-def permutation\n\\ No newline at end of file\n+def permutation()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734017383655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,5 +11,7 @@\n     for stone in inp.split():\n         stones[stone] += 1\n     return stones\n \n-def permutation()\n\\ No newline at end of file\n+def permutation():\n+    for stone in stones:\n+        \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734017455353,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,5 @@\n     return stones\n \n def permutation():\n     for stone in stones:\n-        \n\\ No newline at end of file\n+        if \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734017468224,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,5 @@\n     return stones\n \n def permutation():\n     for stone in stones:\n-        if \n\\ No newline at end of file\n+        \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734017477265,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,5 @@\n     return stones\n \n def permutation():\n     for stone in stones:\n-        \n\\ No newline at end of file\n+        if stone == 0\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734017484989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,6 @@\n     return stones\n \n def permutation():\n     for stone in stones:\n-        if stone == 0\n\\ No newline at end of file\n+        if stone == 0:\n+            st\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734017508269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,8 @@\n         stones[stone] += 1\n     return stones\n \n def permutation():\n+    new_stones = defaultdict(int)\n     for stone in stones:\n         if stone == 0:\n\\ No newline at end of file\n-            st\n+            \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734017514622,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,8 @@\n         stones[stone] += 1\n     return stones\n \n def permutation():\n-    new_stones = defaultdict(int)\n+    new_stones = list()\n     for stone in stones:\n         if stone == 0:\n             \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734017542537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,5 +15,5 @@\n def permutation():\n     new_stones = list()\n     for stone in stones:\n         if stone == 0:\n-            \n\\ No newline at end of file\n+            new_stones.append(stones[stone]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734017558942,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,5 +15,5 @@\n def permutation():\n     new_stones = list()\n     for stone in stones:\n         if stone == 0:\n-            new_stones.append(stones[stone]\n\\ No newline at end of file\n+            new_stones.append((\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734017566411,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,6 +14,6 @@\n \n def permutation():\n     new_stones = list()\n     for stone in stones:\n-        if stone == 0:\n-            new_stones.append((\n\\ No newline at end of file\n+        if stone == 0: # 0\n+            new_stones.append((1, stones[stone]))\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734017573873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,6 +14,6 @@\n \n def permutation():\n     new_stones = list()\n     for stone in stones:\n-        if stone == 0: # 0\n+        if stone == 0: # 0 becomes 1\n             new_stones.append((1, stones[stone]))\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734017599955,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,16 @@\n     for stone in inp.split():\n         stones[stone] += 1\n     return stones\n \n+def even_digits():\n+    for stone in stones:\n+        if stone % 2 != 0:\n+            stones[stone] -= 1\n+    return stones\n\\ No newline at end of file\n+\n def permutation():\n     new_stones = list()\n     for stone in stones:\n         if stone == 0: # 0 becomes 1\n-            new_stones.append((1, stones[stone]))\n+            new_stones.append((1, stones[stone]))\n+        elif\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734017608936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,12 +12,9 @@\n         stones[stone] += 1\n     return stones\n \n def even_digits():\n-    for stone in stones:\n-        if stone % 2 != 0:\n-            stones[stone] -= 1\n-    return stones\n+    \n \n def permutation():\n     new_stones = list()\n     for stone in stones:\n"
+                },
+                {
+                    "date": 1734017618837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     for stone in inp.split():\n         stones[stone] += 1\n     return stones\n \n-def even_digits():\n+def even_num_digits(stone: int):\n     \n \n def permutation():\n     new_stones = list()\n"
+                },
+                {
+                    "date": 1734017624604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n         stones[stone] += 1\n     return stones\n \n def even_num_digits(stone: int):\n-    \n+    return len(str(stone)) % 2 == 0\n \n def permutation():\n     new_stones = list()\n     for stone in stones:\n"
+                },
+                {
+                    "date": 1734017635380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,5 +19,5 @@\n     new_stones = list()\n     for stone in stones:\n         if stone == 0: # 0 becomes 1\n             new_stones.append((1, stones[stone]))\n-        elif\n\\ No newline at end of file\n+        elif \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1734017650745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,5 +19,5 @@\n     new_stones = list()\n     for stone in stones:\n         if stone == 0: # 0 becomes 1\n             new_stones.append((1, stones[stone]))\n-        elif \n\\ No newline at end of file\n+        elif even_num_digits(stone): # sp\n"
+                },
+                {
+                    "date": 1734017658111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,5 +19,8 @@\n     new_stones = list()\n     for stone in stones:\n         if stone == 0: # 0 becomes 1\n             new_stones.append((1, stones[stone]))\n-        elif even_num_digits(stone): # sp\n+        elif even_num_digits(stone): # split in half\n+            half = len(str(stone)) // 2\n+            new_stones.append((stone // 2, stones[stone]))\n+            new_stones.append((stone // 2, stones[stone]))\n"
+                },
+                {
+                    "date": 1734017701346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,8 @@\n     new_stones = list()\n     for stone in stones:\n         if stone == 0: # 0 becomes 1\n             new_stones.append((1, stones[stone]))\n-        elif even_num_digits(stone): # split in half\n+        elif even_num_digits(stone): # split str\n             half = len(str(stone)) // 2\n             new_stones.append((stone // 2, stones[stone]))\n             new_stones.append((stone // 2, stones[stone]))\n"
+                },
+                {
+                    "date": 1734017710713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,8 @@\n     new_stones = list()\n     for stone in stones:\n         if stone == 0: # 0 becomes 1\n             new_stones.append((1, stones[stone]))\n-        elif even_num_digits(stone): # split str\n+        elif even_num_digits(stone): # split string in half\n             half = len(str(stone)) // 2\n-            new_stones.append((stone // 2, stones[stone]))\n-            new_stones.append((stone // 2, stones[stone]))\n+            new_stones.append((int(str(stone)[:half]), stones[stone]))\n+            new_stones.append((int(str(stone)[half:]), stones[stone]))\n"
+                },
+                {
+                    "date": 1734017720514,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,6 +21,6 @@\n         if stone == 0: # 0 becomes 1\n             new_stones.append((1, stones[stone]))\n         elif even_num_digits(stone): # split string in half\n             half = len(str(stone)) // 2\n-            new_stones.append((int(str(stone)[:half]), stones[stone]))\n+            new_stones.append((int(str(stone)[:half]), stones[stone]\n             new_stones.append((int(str(stone)[half:]), stones[stone]))\n"
+                },
+                {
+                    "date": 1734017726479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,6 +21,6 @@\n         if stone == 0: # 0 becomes 1\n             new_stones.append((1, stones[stone]))\n         elif even_num_digits(stone): # split string in half\n             half = len(str(stone)) // 2\n-            new_stones.append((int(str(stone)[:half]), stones[stone]\n-            new_stones.append((int(str(stone)[half:]), stones[stone]))\n+            new_stones.append((int(str(stone)[:half]), stones[stone] // 2))\n+            new_stones.append((int(str(stone)[half:]), stones[stone] // 2))\n"
+                },
+                {
+                    "date": 1734017755532,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,4 +23,5 @@\n         elif even_num_digits(stone): # split string in half\n             half = len(str(stone)) // 2\n             new_stones.append((int(str(stone)[:half]), stones[stone] // 2))\n             new_stones.append((int(str(stone)[half:]), stones[stone] // 2))\n+        else: # * 2024\n"
+                },
+                {
+                    "date": 1734017762198,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,5 +23,6 @@\n         elif even_num_digits(stone): # split string in half\n             half = len(str(stone)) // 2\n             new_stones.append((int(str(stone)[:half]), stones[stone] // 2))\n             new_stones.append((int(str(stone)[half:]), stones[stone] // 2))\n-        else: # * 2024\n+        else: # mul\n+\n"
+                },
+                {
+                    "date": 1734017770576,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,6 +23,7 @@\n         elif even_num_digits(stone): # split string in half\n             half = len(str(stone)) // 2\n             new_stones.append((int(str(stone)[:half]), stones[stone] // 2))\n             new_stones.append((int(str(stone)[half:]), stones[stone] // 2))\n-        else: # mul\n+        else: # multiply by 2024\n+            new_stones.append((stone * 2024, stones[stone]))\n \n"
+                },
+                {
+                    "date": 1734017797812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,5 +25,6 @@\n             new_stones.append((int(str(stone)[:half]), stones[stone] // 2))\n             new_stones.append((int(str(stone)[half:]), stones[stone] // 2))\n         else: # multiply by 2024\n             new_stones.append((stone * 2024, stones[stone]))\n+            \n \n"
+                },
+                {
+                    "date": 1734017803934,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,6 +26,6 @@\n             new_stones.append((int(str(stone)[half:]), stones[stone] // 2))\n         else: # multiply by 2024\n             new_stones.append((stone * 2024, stones[stone]))\n \n-    # \n+    # update stones\n \n"
+                },
+                {
+                    "date": 1734017811870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,6 +31,6 @@\n     stones.clear()\n     for stone in new_stones:\n         stones[stone[0]] += stone[1]\n \n-        \n+    \n \n"
+                }
+            ],
+            "date": 1734017094707,
+            "name": "Commit-0",
+            "content": "7568 155731 0 972 1 6919238 80646 22\n"
+        }
+    ]
+}

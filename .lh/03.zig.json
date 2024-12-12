@@ -1,0 +1,238 @@
+{
+    "sourceFile": "03.zig",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 55,
+            "patches": [
+                {
+                    "date": 1733235630812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1733235647637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,7 @@\n const std = @import(\"std\");\n const stdout = std.io.getStdOut().writer();\n-const mem = std.mem;\n\\ No newline at end of file\n+const mem = std.mem;\n+\n+pub fn main() !void {\n+    \n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733236071240,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n+v\n+\n const std = @import(\"std\");\n const stdout = std.io.getStdOut().writer();\n const mem = std.mem;\n \n pub fn main() !void {\n-    \n+\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733236077530,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n-v\n+const re = @cImport(@cInclude(\"regez.h\"));\n+const REGEX_T_SIZEOF = re.sizeof_regex_t;\n+const REGEX_T_ALIGNOF = re.alignof_regex_t;\n \n const std = @import(\"std\");\n const stdout = std.io.getStdOut().writer();\n const mem = std.mem;\n"
+                },
+                {
+                    "date": 1733236093380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,6 +6,11 @@\n const stdout = std.io.getStdOut().writer();\n const mem = std.mem;\n \n pub fn main() !void {\n+var gpa = std.heap.GeneralPurposeAllocator(.{}){};\n+  const allocator = gpa.allocator();\n \n+  const slice = try allocator.alignedAlloc(u8, REGEX_T_ALIGNOF, REGEX_T_SIZEOF);\n+  defer allocator.free(slice);\n+  const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733236101471,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n const mem = std.mem;\n \n pub fn main() !void {\n var gpa = std.heap.GeneralPurposeAllocator(.{}){};\n-  const allocator = gpa.allocator();\n+const allocator = gpa.allocator();\n \n   const slice = try allocator.alignedAlloc(u8, REGEX_T_ALIGNOF, REGEX_T_SIZEOF);\n   defer allocator.free(slice);\n   const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n"
+                },
+                {
+                    "date": 1733236107251,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,11 +6,11 @@\n const stdout = std.io.getStdOut().writer();\n const mem = std.mem;\n \n pub fn main() !void {\n-var gpa = std.heap.GeneralPurposeAllocator(.{}){};\n-const allocator = gpa.allocator();\n+    var gpa = std.heap.GeneralPurposeAllocator(.{}){};\n+    const allocator = gpa.allocator();\n \n-  const slice = try allocator.alignedAlloc(u8, REGEX_T_ALIGNOF, REGEX_T_SIZEOF);\n-  defer allocator.free(slice);\n-  const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n+    const slice = try allocator.alignedAlloc(u8, REGEX_T_ALIGNOF, REGEX_T_SIZEOF);\n+    defer allocator.free(slice);\n+    const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733236132220,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,5 +12,7 @@\n \n     const slice = try allocator.alignedAlloc(u8, REGEX_T_ALIGNOF, REGEX_T_SIZEOF);\n     defer allocator.free(slice);\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n+\n+    \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733236550976,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-const re = @cImport(@cInclude(\"regez.h\"));\n+const re = @cImport(@cInclude(\"regec.h\"));\n const REGEX_T_SIZEOF = re.sizeof_regex_t;\n const REGEX_T_ALIGNOF = re.alignof_regex_t;\n \n const std = @import(\"std\");\n@@ -13,6 +13,6 @@\n     const slice = try allocator.alignedAlloc(u8, REGEX_T_ALIGNOF, REGEX_T_SIZEOF);\n     defer allocator.free(slice);\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n \n-    \n+\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733236680189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,6 @@\n     const slice = try allocator.alignedAlloc(u8, REGEX_T_ALIGNOF, REGEX_T_SIZEOF);\n     defer allocator.free(slice);\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n \n-\n+    con\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733236685517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,6 @@\n     const slice = try allocator.alignedAlloc(u8, REGEX_T_ALIGNOF, REGEX_T_SIZEOF);\n     defer allocator.free(slice);\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n \n-    con\n+    const \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733236691563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,6 @@\n     const slice = try allocator.alignedAlloc(u8, REGEX_T_ALIGNOF, REGEX_T_SIZEOF);\n     defer allocator.free(slice);\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n \n-    const \n+    const regex =  \"\"\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733236698715,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,6 @@\n     const slice = try allocator.alignedAlloc(u8, REGEX_T_ALIGNOF, REGEX_T_SIZEOF);\n     defer allocator.free(slice);\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n \n-    const regex =  \"\"\n+    const regex =  \"mul\\\"\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733236704396,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,6 @@\n     const slice = try allocator.alignedAlloc(u8, REGEX_T_ALIGNOF, REGEX_T_SIZEOF);\n     defer allocator.free(slice);\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n \n-    const regex =  \"mul\\\"\n+    const regex =  \"mul\\(\\)\"\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733236712070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,6 @@\n     const slice = try allocator.alignedAlloc(u8, REGEX_T_ALIGNOF, REGEX_T_SIZEOF);\n     defer allocator.free(slice);\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n \n-    const regex =  \"mul\\(\\)\"\n+    const regex =  \"mul\\(\\d+,\\)\";\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733236724221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,6 @@\n     const slice = try allocator.alignedAlloc(u8, REGEX_T_ALIGNOF, REGEX_T_SIZEOF);\n     defer allocator.free(slice);\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n \n-    const regex =  \"mul\\(\\d+,\\)\";\n+    const regex =  \"mul\\(\\d+,\\d+\\)|\";\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733236729495,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,6 @@\n     const slice = try allocator.alignedAlloc(u8, REGEX_T_ALIGNOF, REGEX_T_SIZEOF);\n     defer allocator.free(slice);\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n \n-    const regex =  \"mul\\(\\d+,\\d+\\)|\";\n+    const regex =  \"mul\\(\\d+,\\d+\\)|do\\()\";\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733236738146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,6 @@\n     const slice = try allocator.alignedAlloc(u8, REGEX_T_ALIGNOF, REGEX_T_SIZEOF);\n     defer allocator.free(slice);\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n \n-    const regex =  \"mul\\(\\d+,\\d+\\)|do\\()\";\n+    const regex =  \"mul\\(\\d+,\\d+\\)|do\\(\\)|don'\";\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733236745798,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,6 @@\n     const slice = try allocator.alignedAlloc(u8, REGEX_T_ALIGNOF, REGEX_T_SIZEOF);\n     defer allocator.free(slice);\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n \n-    const regex =  \"mul\\(\\d+,\\d+\\)|do\\(\\)|don'\";\n+    const regex =  \"mul\\(\\d+,\\d+\\)|do\\(\\)|don't\\(\\)|\\\";\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733236773793,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,6 @@\n     const slice = try allocator.alignedAlloc(u8, REGEX_T_ALIGNOF, REGEX_T_SIZEOF);\n     defer allocator.free(slice);\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n \n-    const regex =  \"mul\\(\\d+,\\d+\\)|do\\(\\)|don't\\(\\)|\\\";\n+    const regex =  \"mul\\\\(\\d+,\\d+\\)|do\\(\\)|don't\\(\\)\";\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733236780695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,6 @@\n     const slice = try allocator.alignedAlloc(u8, REGEX_T_ALIGNOF, REGEX_T_SIZEOF);\n     defer allocator.free(slice);\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n \n-    const regex =  \"mul\\\\(\\d+,\\d+\\)|do\\(\\)|don't\\(\\)\";\n+    const regex =  \"mul\\\\(\\\\d+,\\\\d+\\\\)|do\\(\\)|don't\\(\\)\";\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733236786586,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,6 @@\n     const slice = try allocator.alignedAlloc(u8, REGEX_T_ALIGNOF, REGEX_T_SIZEOF);\n     defer allocator.free(slice);\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n \n-    const regex =  \"mul\\\\(\\\\d+,\\\\d+\\\\)|do\\(\\)|don't\\(\\)\";\n+    const regex =  \"mul\\\\(\\\\d+,\\\\d+\\\\)|do\\\\(\\\\)|don't\\\\(\\)\";\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733236822827,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,8 @@\n     const slice = try allocator.alignedAlloc(u8, REGEX_T_ALIGNOF, REGEX_T_SIZEOF);\n     defer allocator.free(slice);\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n \n-    const regex =  \"mul\\\\(\\\\d+,\\\\d+\\\\)|do\\\\(\\\\)|don't\\\\(\\)\";\n+    const regex =  \"mul\\\\(\\\\d+,\\\\d+\\\\)|do\\\\(\\\\)|don't\\\\(\\\\)\";\n+\n+    if (re.recomp)\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733236903105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,6 +15,6 @@\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n \n     const regex =  \"mul\\\\(\\\\d+,\\\\d+\\\\)|do\\\\(\\\\)|don't\\\\(\\\\)\";\n \n-    if (re.recomp)\n+    if (re.recomp(regext,))\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733236909445,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,6 +15,6 @@\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n \n     const regex =  \"mul\\\\(\\\\d+,\\\\d+\\\\)|do\\\\(\\\\)|don't\\\\(\\\\)\";\n \n-    if (re.recomp(regext,))\n+    if (re.recomp(regext, regex, 0))\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733236914864,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,6 +15,8 @@\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n \n     const regex =  \"mul\\\\(\\\\d+,\\\\d+\\\\)|do\\\\(\\\\)|don't\\\\(\\\\)\";\n \n-    if (re.recomp(regext, regex, 0))\n+    if (re.recomp(regext, regex, 0) != 0) {\n+        \n+    }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733236922205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,7 +16,9 @@\n \n     const regex =  \"mul\\\\(\\\\d+,\\\\d+\\\\)|do\\\\(\\\\)|don't\\\\(\\\\)\";\n \n     if (re.recomp(regext, regex, 0) != 0) {\n-        \n+        try stdout.print(\"recomp failed\\n\", .{});\n+        return;\n     }\n+    \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733236930055,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,6 +19,8 @@\n     if (re.recomp(regext, regex, 0) != 0) {\n         try stdout.print(\"recomp failed\\n\", .{});\n         return;\n     }\n+    defer re.regfree(regext);\n+\n     \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733236941180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,6 +21,7 @@\n         return;\n     }\n     defer re.regfree(regext);\n \n+    const text = \"mul(1,2) don't() do()\";\n     \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733236991642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,7 +21,6 @@\n         return;\n     }\n     defer re.regfree(regext);\n \n-    const text = \"mul(1,2) don't() do()\";\n     \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733237009801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n \n     const regex =  \"mul\\\\(\\\\d+,\\\\d+\\\\)|do\\\\(\\\\)|don't\\\\(\\\\)\";\n \n-    if (re.recomp(regext, regex, 0) != 0) {\n+    if (re.recomp(regext, regex, re) != 0) {\n         try stdout.print(\"recomp failed\\n\", .{});\n         return;\n     }\n     defer re.regfree(regext);\n"
+                },
+                {
+                    "date": 1733237016738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n \n     const regex =  \"mul\\\\(\\\\d+,\\\\d+\\\\)|do\\\\(\\\\)|don't\\\\(\\\\)\";\n \n-    if (re.recomp(regext, regex, re) != 0) {\n+    if (re.recomp(regext, regex, re.REG_EXTENDED) != 0) {\n         try stdout.print(\"recomp failed\\n\", .{});\n         return;\n     }\n     defer re.regfree(regext);\n"
+                },
+                {
+                    "date": 1733237051247,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,6 +21,11 @@\n         return;\n     }\n     defer re.regfree(regext);\n \n+\n+        var file = try std.fs.cwd().openFile(\"inputs/input_02.txt\", .{});\n+    defer file.close();\n+\n+    const reader = file.reader();\n     \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733237056979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     }\n     defer re.regfree(regext);\n \n \n-        var file = try std.fs.cwd().openFile(\"inputs/input_02.txt\", .{});\n+    var file = try std.fs.cwd().openFile(\"inputs/input_03.txt\", .{});\n     defer file.close();\n \n     const reader = file.reader();\n     \n"
+                },
+                {
+                    "date": 1733237187728,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,10 +22,11 @@\n     }\n     defer re.regfree(regext);\n \n \n-    var file = try std.fs.cwd().openFile(\"inputs/input_03.txt\", .{});\n+    contg file = try std.fs.cwd().openFile(\"inputs/input_03.txt\", .{});\n     defer file.close();\n \n     const reader = file.reader();\n+\n     \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733237202110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     }\n     defer re.regfree(regext);\n \n \n-    contg file = try std.fs.cwd().openFile(\"inputs/input_03.txt\", .{});\n+    const file = std.fs.cwd().openFile(\"inputs/input_03.txt\", .{});\n     defer file.close();\n \n     const reader = file.reader();\n \n"
+                },
+                {
+                    "date": 1733237211917,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     }\n     defer re.regfree(regext);\n \n \n-    const file = std.fs.cwd().openFile(\"inputs/input_03.txt\", .{});\n+    const file = std.fs.cwd().openFile(\"inputs/input_03.txt\", .{})\n     defer file.close();\n \n     const reader = file.reader();\n \n"
+                },
+                {
+                    "date": 1733237292831,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n \n pub fn main() !void {\n     var gpa = std.heap.GeneralPurposeAllocator(.{}){};\n     const allocator = gpa.allocator();\n+    de\n \n     const slice = try allocator.alignedAlloc(u8, REGEX_T_ALIGNOF, REGEX_T_SIZEOF);\n     defer allocator.free(slice);\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n@@ -22,9 +23,12 @@\n     }\n     defer re.regfree(regext);\n \n \n-    const file = std.fs.cwd().openFile(\"inputs/input_03.txt\", .{})\n+    const file = std.fs.cwd().openFile(\"inputs/input_03.txt\", .{}) catch |err| {\n+        try stdout.print(\"Error: {}\\n\", .{err});\n+        return;\n+    };\n     defer file.close();\n \n     const reader = file.reader();\n \n"
+                },
+                {
+                    "date": 1733237299039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n pub fn main() !void {\n     var gpa = std.heap.GeneralPurposeAllocator(.{}){};\n     const allocator = gpa.allocator();\n-    de\n+    defer {_ = }\n \n     const slice = try allocator.alignedAlloc(u8, REGEX_T_ALIGNOF, REGEX_T_SIZEOF);\n     defer allocator.free(slice);\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n"
+                },
+                {
+                    "date": 1733237304498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n pub fn main() !void {\n     var gpa = std.heap.GeneralPurposeAllocator(.{}){};\n     const allocator = gpa.allocator();\n-    defer {_ = }\n+    defer {_ = gpa.deinit()}\n \n     const slice = try allocator.alignedAlloc(u8, REGEX_T_ALIGNOF, REGEX_T_SIZEOF);\n     defer allocator.free(slice);\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n"
+                },
+                {
+                    "date": 1733237314681,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,10 @@\n \n pub fn main() !void {\n     var gpa = std.heap.GeneralPurposeAllocator(.{}){};\n     const allocator = gpa.allocator();\n-    defer {_ = gpa.deinit()}\n+    defer {\n+        _ = gpa.deinit();}\n \n     const slice = try allocator.alignedAlloc(u8, REGEX_T_ALIGNOF, REGEX_T_SIZEOF);\n     defer allocator.free(slice);\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n"
+                },
+                {
+                    "date": 1733237383960,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,10 @@\n pub fn main() !void {\n     var gpa = std.heap.GeneralPurposeAllocator(.{}){};\n     const allocator = gpa.allocator();\n     defer {\n-        _ = gpa.deinit();}\n+        _ = gpa.deinit();\n+    }\n \n     const slice = try allocator.alignedAlloc(u8, REGEX_T_ALIGNOF, REGEX_T_SIZEOF);\n     defer allocator.free(slice);\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n@@ -23,9 +24,9 @@\n         return;\n     }\n     defer re.regfree(regext);\n \n-\n+    // open file\n     const file = std.fs.cwd().openFile(\"inputs/input_03.txt\", .{}) catch |err| {\n         try stdout.print(\"Error: {}\\n\", .{err});\n         return;\n     };\n"
+                },
+                {
+                    "date": 1733237390591,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n     defer {\n         _ = gpa.deinit();\n     }\n \n+    // \n     const slice = try allocator.alignedAlloc(u8, REGEX_T_ALIGNOF, REGEX_T_SIZEOF);\n     defer allocator.free(slice);\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n \n"
+                },
+                {
+                    "date": 1733237410045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     defer {\n         _ = gpa.deinit();\n     }\n \n-    // \n+    // compile regex\n     const slice = try allocator.alignedAlloc(u8, REGEX_T_ALIGNOF, REGEX_T_SIZEOF);\n     defer allocator.free(slice);\n     const regext: [*]re.regex_t = @ptrCast(slice.ptr);\n \n@@ -32,8 +32,8 @@\n         return;\n     };\n     defer file.close();\n \n-    const reader = file.reader();\n+    //\n \n     \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733237417495,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,9 @@\n         return;\n     };\n     defer file.close();\n \n-    //\n+    // read file into buffer\n+    const \n \n     \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733237428191,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,8 +33,8 @@\n     };\n     defer file.close();\n \n     // read file into buffer\n-    const \n+    const stat = file.stat();\n \n     \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733237434181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,8 +33,8 @@\n     };\n     defer file.close();\n \n     // read file into buffer\n-    const stat = file.stat();\n+    const stat = try file.stat();\n \n     \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733237444053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,7 +34,7 @@\n     defer file.close();\n \n     // read file into buffer\n     const stat = try file.stat();\n-\n+    const buffer = try \n     \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733237449737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,7 +34,7 @@\n     defer file.close();\n \n     // read file into buffer\n     const stat = try file.stat();\n-    const buffer = try \n+    const buffer = try file.readTo\n     \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733237458512,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,7 +34,7 @@\n     defer file.close();\n \n     // read file into buffer\n     const stat = try file.stat();\n-    const buffer = try file.readTo\n+    const buffer = try file.readToEndAlloc(allocator, stat.size);\n     \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733237463739,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,6 +35,7 @@\n \n     // read file into buffer\n     const stat = try file.stat();\n     const buffer = try file.readToEndAlloc(allocator, stat.size);\n+    defer\n     \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733237469720,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,7 +35,9 @@\n \n     // read file into buffer\n     const stat = try file.stat();\n     const buffer = try file.readToEndAlloc(allocator, stat.size);\n-    defer\n+    defer allocator.free(buffer);\n+\n     \n+    \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733237484803,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,7 +37,8 @@\n     const stat = try file.stat();\n     const buffer = try file.readToEndAlloc(allocator, stat.size);\n     defer allocator.free(buffer);\n \n+    // match regex\n     \n     \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733237506992,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,7 +38,7 @@\n     const buffer = try file.readToEndAlloc(allocator, stat.size);\n     defer allocator.free(buffer);\n \n     // match regex\n+    var matches = \n     \n-    \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733237520667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,7 +38,7 @@\n     const buffer = try file.readToEndAlloc(allocator, stat.size);\n     defer allocator.free(buffer);\n \n     // match regex\n-    var matches = [5]re.regmatch_t = undefined;\n+    var matches = [5]re.regmatch_t = undefined;;\n     \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1733246635860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     const stat = try file.stat();\n     var input = try file.readToEndAlloc(allocator, stat.size);\n     defer allocator.free(input);\n \n-    \n+    c\n \n     const dont_split = mem.splitScalar(\n \n     // parse input\n"
+                }
+            ],
+            "date": 1733235630812,
+            "name": "Commit-0",
+            "content": "const std = @import(\"std\");\nconst stdout = std.io.getStdOut().writer();\nconst mem = std.mem;"
+        }
+    ]
+}

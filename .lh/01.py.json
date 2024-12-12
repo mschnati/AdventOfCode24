@@ -1,0 +1,18 @@
+{
+    "sourceFile": "01.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1733150457451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1733150457451,
+            "name": "Commit-0",
+            "content": "list_1 = []\nlist_2 = []\nwith open(\"inputs/input_01.txt\") as file:\n    for line in file:\n        if line.strip():\n            num1, num2 = map(int, line.split())\n            list_1.append(num1)\n            list_2.append(num2)\n\nlist_1.sort()\nlist_2.sort()\nresult_1 = 0\nfor i, num in enumerate(list_1):\n    if num > list_2[i]:\n        result_1 += num - list_2[i]\n    else:\n        result_1 += list_2[i] - num\n\nprint(\"result 1: \" + str(result_1))\n\nresult_2 = 0\nj = 0\nfor i, num in enumerate(list_1):\n    mult = 0\n    while num >= list_2[j]:\n        # print(str(num) + ' ' + str(list_2[j]))\n        if num == list_2[j]:\n            # print('found')\n            mult += 1\n        j += 1\n    result_2 += num * mult\n\nprint(\"result 2: \" + str(result_2))"
+        }
+    ]
+}
