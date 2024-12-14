@@ -21,3 +21,11 @@ Day  8: [Python](08.py)
 Day  9: [Python](09.py)
 
 Day 10: [Python](10.py)
+
+Day 11: [Python](11.py)
+
+Day 12: [Python](12.py)
+
+Day 13: [Python](13.py)
+
+Day 14: [Python](14.py)
