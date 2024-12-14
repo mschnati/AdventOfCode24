@@ -25,17 +25,15 @@ with open(i) as file:
             y = coordinates[-1].partition('=')[-1]
             machines[-1].append((int(x), int(y)))
 
+# TODO: learn regex
+
 # Button A: X+94, Y+34
 # Button B: X+22, Y+67
 # Prize: X=8400, Y=5400
 # 94a + 22b = 8400
 # 34a + 67b = 5400
-
-def lcm(a, b):
-    return abs(a*b) // math.gcd(a, b)
-
 def solve_equation(button_a, button_b, prize):
-    lcm_a = lcm(button_a[0], button_a[1])
+    lcm_a = math.lcm(button_a[0], button_a[1])
     mult_1 = lcm_a // button_a[0]
     mult_2 = -(lcm_a // button_a[1])
     eq_1 = [button_a[0] * mult_1, button_b[0] * mult_1, prize[0] * mult_1]
@@ -63,7 +61,6 @@ print("Part 1:" , part_1(machines))
 
 # Part 2
 # add 10000000000000 to every prize
-
 def part_2(machines):
     tokens = 0
     for machine in machines:
