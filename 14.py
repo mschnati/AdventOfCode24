@@ -1,4 +1,5 @@
 from collections import defaultdict
+import time
 
 i = "inputs/input_14.txt"
 t = "test.txt"
@@ -52,8 +53,9 @@ def count_quadrants(positions):
     return quad_count
 
 
-positions = defaultdict(int)
+
 def part_1():
+    positions = defaultdict(int)
     num_moves = 100
     for robot in robots:
         x, y = move_robot(robot, num_moves)
@@ -64,3 +66,26 @@ def part_1():
 
 
 print("Part 1:", part_1())
+
+def part_2():
+    num_moves = 12
+    while True:
+        inp = input()
+        if inp == 'q':
+            break
+        if inp == 'z':
+            num_moves -= 103
+        else:
+            num_moves += 103
+        positions = defaultdict(int)
+        for robot in robots:
+            x, y = move_robot(robot, num_moves)
+            positions[(x, y)] += 1
+        # clear screen
+        print("\033[H\033[J")
+        print_map(positions)
+        print("Moves:", num_moves)
+        # sleep
+        time.sleep(0.15)
+
+part_2()
