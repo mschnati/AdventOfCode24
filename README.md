@@ -29,3 +29,7 @@ Day 12: [Python](12.py)
 Day 13: [Python](13.py)
 
 Day 14: [Python](14.py)
+
+Day 15: [Python](15.py)
+
+Day 16: [Python](16.py)
